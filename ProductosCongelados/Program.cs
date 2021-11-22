@@ -16,6 +16,7 @@ namespace ProductosCongelados
             Console.Write("Su producto agregado fue: " + Nombre + "\n" + "El tipo de su producto es: " + Tipo+"\n");
             Console.WriteLine("Seleccione su metodo de congelacion mediante el menu de:");
             Console.Write("Congelación por aire #1"+"\n" + "Congelación por agua #2"+"\n"+"Congelación por nitrógeno #3"+"\n");
+            //CREAMOS UN IF A MODO DE MENU PARA SELECCIONAR EL TIPO DE ENFRIAMIENTO
             num1 = int.Parse(Console.ReadLine());
             if (num1 == 1)
             {
@@ -32,6 +33,7 @@ namespace ProductosCongelados
                 Aire nitrogeno = new Aire();
                 int porcentajnitrogeno = aire.ingresoaporcentaje();
                 nitrogeno.porcentajeoxigeno = porcentajnitrogeno;
+                //CREACIÓN DE LA LISTA DEL PRIMER CASO
                 List<Aire> Listaporcentajes = new List<Aire>();
                 Listaporcentajes.Add(aire);
                 Listaporcentajes.Add(carbono);
@@ -51,6 +53,7 @@ namespace ProductosCongelados
                 int gramossal = agua.Ingresoaguaporcen();
                 Console.WriteLine("Ingrese su cantidad de litros de agua en números enteros");
                 int litrosdeagua = agua.Ingresoaguaporcen();
+                //CREACIÓN DE LA LISTA DEL SEGUNDO CASO
                 List<Agua> Listagua = new List<Agua>();
                 Listagua.Add(agua);
                 foreach (Agua item in Listagua)
@@ -68,6 +71,7 @@ namespace ProductosCongelados
                 int tiempoexposicion = nitro.Ingresonitrogeno();
                 Console.WriteLine("Ingrese el peso del producto");
                 int peso = nitro.Ingresonitrogeno();
+                //CREACIÓN DE LA LISTA DEL TERCER CASO
                 List<Nitrogeno> Listanitro= new List<Nitrogeno>();
                 Listanitro.Add(nitro);
                 foreach (Nitrogeno item in Listanitro)
@@ -76,9 +80,20 @@ namespace ProductosCongelados
                 }
                 producto3 = (tiempoexposicion * peso);
                 Console.WriteLine("El resultado de la multiplicación de su tiempo de exposición mas su peso fue de: " + producto3);
-
-
             }
+            Console.WriteLine("Se imprime la lista con la herencia padre:");       
+            //SE CREA LA LISTA DE CLASE PADRE PARA CONFIRMAR, AGREGANDO UN OBJETO DE CADA UNA DE LAS CLASES HIJAS
+            Congelado lista = new Congelado();
+            lista.peso = 10;
+            lista.porcentajcarbono = 20;
+            _ = lista.gramossal=30;
+            List<Congelado> Listadatos = new List<Congelado>();
+            Listadatos.Add(lista);
+            foreach (Congelado item in Listadatos)
+            {
+                Console.WriteLine("Pesos: "+item.peso+"\n"+ "Porcentaje carbono: "+item.porcentajcarbono+"\n"+"Gramos de sal: "+item.gramossal);
+            }
+
         }
     }
 }

@@ -12,7 +12,8 @@ namespace ProductosCongelados
             }
         public int ingresoaporcentaje()
         {
-            
+            //APLICAMOS PARA PODER INGRESAR LOS DATOS A LA CLASE
+
             int porcentajeoxigeno = int.Parse(Console.ReadLine());
             return porcentajeoxigeno;
             int porcentajcarbono= int.Parse(Console.ReadLine());

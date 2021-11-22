@@ -4,6 +4,7 @@ using System.Text;
 
 namespace ProductosCongelados
 {
+    //CREAMOS LA CLASE PADRE QUE HEREDARÁ A LAS CLASES HIJAS QUE SON AGUA, NITROGENO Y AIRE
     class Congelado
     {
         public int porcentajeoxigeno { get; set; }

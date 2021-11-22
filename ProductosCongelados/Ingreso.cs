@@ -5,6 +5,7 @@ using System.Text;
 namespace ProductosCongelados
 {
     class Ingreso
+    //APLICAMOS PARA PODER INGRESAR LOS DATOS A LA CLASE
     {
         public Ingreso()
         {
